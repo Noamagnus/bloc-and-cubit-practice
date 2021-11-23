@@ -1,14 +1,16 @@
 part of 'weather_cubit.dart';
-
+//! We're creating states for asyncronous loading web sources
 @immutable
 abstract class WeatherState {
   const WeatherState();
 }
-
+//! This one is before user took any action
+// In this case its only initial search bar
 class WeatherInitial extends WeatherState {
   const WeatherInitial();
 }
-
+// This one is emitted when we're waiting for data to be resolved
+// Or could say waiting for future to complete
 class WeatherLoading extends WeatherState {
   const WeatherLoading();
 }

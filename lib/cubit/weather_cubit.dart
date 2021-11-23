@@ -5,11 +5,14 @@ import 'package:meta/meta.dart';
 
 part 'weather_state.dart';
 
+//! Cubit emits different states
 class WeatherCubit extends Cubit<WeatherState> {
-  final WeatherRepository _weatherRepository;
+  //!We're preparing for dependency injection by having a field
+
+  final WeatherRepository _weatherRepository; 
 
   WeatherCubit(this._weatherRepository) : super(WeatherInitial());
-
+//We don't wanna returnd anything we just want this method to be async 
   Future<void> getWeather(String cityName) async {
     try {
       emit(WeatherLoading());
